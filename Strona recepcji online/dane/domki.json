@@ -1,0 +1,29 @@
+[
+    {
+        "id": "szept-lasu",
+        "nazwa": "Szept Lasu",
+        "pojemnosc": 2,
+        "cena": 350,
+        "opis": "Szept Lasu to nasz najbardziej kameralny i ukryty domek, otoczony gęstym, starym drzewostanem. Idealny dla par i osób szukających całkowitego wyciszenia.",
+        "opisPelny": "Wewnątrz znajdziesz przytulną sypialnię z łóżkiem z widokiem na korony drzew oraz małą, ale funkcjonalną łazienkę z deszczownicą. Salon połączony jest z aneksem kuchennym, gdzie dominuje surowe drewno i miękka, wełniana tapicerka.",
+        "zdjecie": "images/obraz6.jpg"
+    },
+    {
+        "id": "mleczna-droga",
+        "nazwa": "Mleczna Droga",
+        "pojemnosc": 4,
+        "cena": 480,
+        "opis": "Mleczna Droga to domek zaprojektowany z myślą o bezkompromisowym relaksie i obserwacji gwiazd. Położony na otwartym wzgórzu, z dala od sztucznego światła.",
+        "opisPelny": "Gwiazdą tego domku jest sypialnia na poddaszu z gigantycznym oknem dachowym – możesz zasypiać, patrząc na konstelacje. Na parterze czeka przestronny salon z kominkiem oraz elegancka łazienka z wanną z hydromasażem.",
+        "zdjecie": "images/obraz7.jpg"
+    },
+    {
+        "id": "lesna-przystan",
+        "nazwa": "Leśna Przystań",
+        "pojemnosc": 6,
+        "cena": 620,
+        "opis": "Leśna Przystań to nasz flagowy, największy domek – idealne schronienie dla rodzin lub dwójki par przyjaciół. Łączy w sobie przytulność wiejskiej chaty z wygodą nowoczesnego apartamentu.",
+        "opisPelny": "Do dyspozycji gości oddajemy dwie oddzielne sypialnie, dwie stylowe łazienki oraz rozległy salon z aneksem kuchennym. Duże, przesuwne drzwi prowadzą na ogromny, częściowo zadaszony taras z leżakami i grillem.",
+        "zdjecie": "images/obraz8.jpg"
+    }
+]

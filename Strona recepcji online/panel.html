@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Panel zarządzania rezerwacjami - podgląd, edycja i usuwanie">
+    <title>Moje rezerwacje - Domki całoroczne</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<!-- menu -->
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-brazowy navbar-menu">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html">Domki całoroczne</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Przełącz nawigację"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Strona Główna</a></li>
+                        <li class="nav-item"><a class="nav-link" href="oferta.html">Oferta</a></li>
+                        <li class="nav-item"><a class="nav-link" href="rezerwacja.html">Rezerwacja</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="panel.html">Moje rezerwacje</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+<!-- rezerwacje -->
+        <section class="py-5">
+            <div class="container px-4 my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <h1 class="fw-bolder mb-4 text-center h2">Zarządzanie rezerwacjami</h1>
+                        <!-- <p class="text-center text-muted mb-4">Tutaj możesz przeglądać, edytować i usuwać rezerwacje zapisane w lokalnym magazynie (localStorage) w formacie JSON.</p> -->
+
+                        <div class="d-flex justify-content-center mb-4">
+                            <a href="rezerwacja.html" class="btn btn-akcent"> Dodaj nową rezerwację</a>
+                        </div>
+<!-- tabela rezerwacji -->
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered align-middle">
+                                <caption class="text-muted">Lista rezerwacji</caption>
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th scope="col">Gość</th>
+                                        <th scope="col">Kontakt</th>
+                                        <th scope="col">Domek</th>
+                                        <th scope="col">Termin</th>
+                                        <th scope="col">Osoby</th>
+                                        <th scope="col">Płatność</th>
+                                        <th scope="col">Akcje</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tabela-rezerwacji-body"></tbody>
+                            </table>
+                        </div>
+
+                        <div id="brak-danych" class="text-center py-5 px-4 bg-jasne rounded-3 border d-none">
+                            <h2 class="h5 fw-bolder mb-3">Brak zapisanych rezerwacji</h2>
+                            <p class="text-muted mb-4">Nie masz jeszcze żadnych zapisanych rezerwacji w systemie.</p>
+                            <a href="rezerwacja.html" class="btn btn-akcent px-4">Dodaj pierwszą rezerwację</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal fade" id="edycjaModal" tabindex="-1" role="dialog" aria-labelledby="edycjaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title h5" id="edycjaModalLabel">Edytuj rezerwację</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formularz-edycji">
+                        <input type="hidden" id="edycja-id">
+                        <div class="mb-3">
+                            <label for="edycja-domek" class="form-label">Domek</label>
+                            <select class="form-select" id="edycja-domek">
+                                <option value="Szept Lasu">Szept Lasu (2-osobowy)</option>
+                                <option value="Mleczna Droga">Mleczna Droga (4-osobowy)</option>
+                                <option value="Leśna Przystań">Leśna Przystań (6-osobowy)</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="edycja-od" class="form-label">Data przyjazdu</label>
+                                <input type="date" class="form-control" id="edycja-od" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="edycja-do" class="form-label">Data wyjazdu</label>
+                                <input type="date" class="form-control" id="edycja-do" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-akcent w-100">Zapisz zmiany</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-brazowy py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0 text-white">Jan Kowalski</div>
+                </div>
+                <div class="col-auto">
+                    <span class="text-white small">123 456 789</span>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="mailto:jan.kowalski@example.com">jan.kowalski@example.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/panel.js"></script>
+</body>
+</html>
